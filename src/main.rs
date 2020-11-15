@@ -85,7 +85,7 @@ impl Box {
 fn main() {
     let mut game_box = Box::new();
     println!(
-        "There is a box. It is currently unlocked. Commands [add, lock, unlock, view, remove]"
+        "There is a box. It is currently unlocked. Commands [add, lock, unlock, view, remove, help]"
     );
     loop {
         let mut guess = String::new();
@@ -113,6 +113,9 @@ fn main() {
        		println!("{}", game_box.add(string.as_str()));
        	}else if values[0] == "lock" {
        		println!("{}", game_box.lock());
+       		continue;
+       	}else if values[0] == "help" {
+       		println!("Commands [add, lock, unlock, view, remove, help]");
        		continue;
        	}else if values[0] == "unlock" {
        		println!("{}",game_box.unlock());
